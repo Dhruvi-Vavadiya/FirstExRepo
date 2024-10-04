@@ -1,0 +1,8 @@
+ejb\PublishBean.class
+entity\Subscription.class
+servlet\NewServlet.class
+entity\Address.class
+ejb\PublishBeanLocal.class
+entity\Customer.class
+com\mycompany\publisher\JakartaRestConfiguration.class
+com\mycompany\publisher\resources\JakartaEE8Resource.class
