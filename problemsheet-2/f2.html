@@ -1,0 +1,55 @@
+<!-- Create an HTML page that includes two dropdown menus (combos): one for selecting states
+and another for displaying cities. When the user selects a state from the primary combo, the
+secondary combo (cities) should dynamically update to display cities relevant to the selected
+state. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Select States</h1>
+    <select name="state" id="state">
+        <option value="">--select state--</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Rajasthan">Rajasthan</option>
+    </select>
+    <h1>Select Cities</h1>
+    <select name="city" id="city" disabled>
+        <option value="">--select city--</option>
+    </select>
+
+    <script>
+        $(document).ready(function(){
+            const cities={
+                Gujarat : ['surat','ahamdabad','rajkot'],
+                Maharashtra : ['mumbai','pune','nagpur'],
+                Rajasthan : ['jaipur','udaipur','jodhpur']
+            }
+
+            $("#state").on("change",function(){
+                
+                const seleState =$(this).val();
+                const city = $("#city");
+               
+                city.empty().append(`<option value="">--select city--</option>`);
+
+                if(seleState){
+                    city.prop("disabled",false);
+
+                    cities[seleState].forEach(element => {
+                        city.append(`<option value="${element}">${element}</option>`);
+                    });
+                }else{
+                    city.prop("disabled",true);
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

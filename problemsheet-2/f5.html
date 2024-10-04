@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form action="" id="fomr">
+        <label for="">Name ::</label>
+        <input type="text" name="name" id="name" placeholder="Enter name"><br>
+        <div id="error" style="display: none;">Plz enter name</div>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+    <script>
+        $(document).ready(function(){
+            $("#fomr").on("submit",function(e){
+                e.preventDefault();
+
+                const nm=$("#name").val().trim();
+                console.log(nm);
+
+                if(nm == ''){
+                    $("#error").css("display","block");
+                    $("#error").css("color","red");
+                }else{
+                    alert("Form submitted success");
+                    
+                }
+            });
+        });
+    </script>
+</body>
+</html>

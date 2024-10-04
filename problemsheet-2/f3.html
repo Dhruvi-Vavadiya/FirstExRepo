@@ -1,0 +1,39 @@
+<!-- 3. Write jQuery code to toggle the visibility of a div element when a button is clicked. The div
+should start as hidden, and clicking the button should alternate between showing and hiding
+it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Visibility</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #toggleDiv {
+            display: none; /* Initially hidden */
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Toggle Visibility Example</h2>
+    <button id="toggleButton">Toggle Div</button>
+    
+    <div id="toggleDiv">
+        This is the content of the div that can be toggled.
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#toggleButton').on('click', function() {
+                $('#toggleDiv').toggle(); // Toggle visibility of the div
+            });
+        });
+    </script>
+
+</body>
+</html>
